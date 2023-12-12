@@ -20,12 +20,4 @@ public class Category {
     private Long id;
     private String name;
     private String description;
-
-    @ManyToMany
-    @JoinTable(
-            name = "job_category",
-            joinColumns = @JoinColumn(name = "category_id"),
-            inverseJoinColumns = @JoinColumn(name = "job_id")
-    )
-    Set<Job> jobs = new HashSet<>();
 }

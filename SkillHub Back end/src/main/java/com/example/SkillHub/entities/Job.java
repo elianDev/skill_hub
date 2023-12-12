@@ -23,4 +23,12 @@ public class Job {
 
     @OneToMany(mappedBy = "job")
     private Set<Advertising> advertisings = new HashSet<>();
+
+    @ManyToMany
+    @JoinTable(
+            name = "job_category",
+            joinColumns = @JoinColumn(name = "job_id"),
+            inverseJoinColumns = @JoinColumn(name = "category_id")
+    )
+    Set<Job> categories = new HashSet<>();
 }
