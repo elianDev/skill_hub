@@ -1,4 +1,4 @@
-package com.devsuperior.dscommerce.dto;
+package com.example.SkillHub.dto.errors;
 
 import java.time.Instant;
 

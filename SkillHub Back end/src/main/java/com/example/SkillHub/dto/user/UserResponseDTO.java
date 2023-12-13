@@ -1,6 +1,5 @@
 package com.example.SkillHub.dto.user;
 
-import com.example.SkillHub.dto.advertising.AdvertisingResponseDTO;
 import com.example.SkillHub.dto.advertising.AdvertisingUserResponseDTO;
 import com.example.SkillHub.entities.Advertising;
 import com.example.SkillHub.entities.User;

@@ -1,10 +1,8 @@
 package com.example.SkillHub.dto.advertising;
 
 import com.example.SkillHub.dto.job.JobAdvertisingResponseDTO;
-import com.example.SkillHub.dto.job.JobResponseDTO;
 import com.example.SkillHub.dto.review.ReviewResponseDTO;
 import com.example.SkillHub.dto.user.SellerResponseDTO;
-import com.example.SkillHub.dto.user.UserResponseDTO;
 import com.example.SkillHub.entities.Advertising;
 import com.example.SkillHub.entities.Review;
 

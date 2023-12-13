@@ -1,6 +1,5 @@
 package com.example.SkillHub.dto.job;
 
-import com.example.SkillHub.dto.advertising.AdvertisingResponseDTO;
 import com.example.SkillHub.dto.category.CategoryResponseDTO;
 import com.example.SkillHub.entities.Advertising;
 import com.example.SkillHub.entities.Category;
