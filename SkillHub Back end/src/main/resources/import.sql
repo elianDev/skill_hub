@@ -61,11 +61,11 @@ INSERT INTO job_category(category_id, job_id) VALUES (5, 23)
 INSERT INTO job_category(category_id, job_id) VALUES (5, 24)
 INSERT INTO job_category(category_id, job_id) VALUES (5, 25)
 
-INSERT INTO tb_user(name, email, password, birth_date, phone, created_at) VALUES ('Alex Silva', 'alex@gmail.com', '$2a$12$iHi3KxsRao/kuaOyfAxlx.oyWArI0lPh25cmB9XAw648Virw85T8m', '1980-01-10', '93991223344', TIMESTAMP WITH TIME ZONE '2020-11-20T03:00:00Z')
-INSERT INTO tb_user(name, email, password, birth_date, phone, created_at) VALUES ('Maria Rocha', 'maria@gmail.com', '$2a$12$iHi3KxsRao/kuaOyfAxlx.oyWArI0lPh25cmB9XAw648Virw85T8m', '1995-05-18', '93992345678', TIMESTAMP WITH TIME ZONE '2020-12-30T03:00:00Z')
+INSERT INTO tb_user(name, email, password, birth_date, phone, created_at) VALUES ('Alex Silva', 'alex@gmail.com', '$2a$12$iHi3KxsRao/kuaOyfAxlx.oyWArI0lPh25cmB9XAw648Virw85T8m', '1980-01-10', '93991223344', TIMESTAMP WITHOUT TIME ZONE '2020-11-20T03:00:00Z')
+INSERT INTO tb_user(name, email, password, birth_date, phone, created_at) VALUES ('Maria Rocha', 'maria@gmail.com', '$2a$12$iHi3KxsRao/kuaOyfAxlx.oyWArI0lPh25cmB9XAw648Virw85T8m', '1995-05-18', '93992345678', TIMESTAMP WITHOUT TIME ZONE '2020-12-30T03:00:00Z')
 
-INSERT INTO tb_advertising(title, description, price, created_at, updated_at, img_url, job_id, seller_id) VALUES ('Faço sua logo', 'Faço sua logo aqui nesse serviço', 100.00, TIMESTAMP WITH TIME ZONE '2021-11-20T03:00:00Z', TIMESTAMP WITH TIME ZONE '2022-11-20T03:00:00Z', 'google.com/img', 1, 1)
+INSERT INTO tb_advertising(title, description, price, created_at, updated_at, img_url, job_id, seller_id) VALUES ('Faço sua logo', 'Faço sua logo aqui nesse serviço', 100.00, TIMESTAMP WITH TIME ZONE '2021-11-20T03:00:00Z', TIMESTAMP WITHOUT TIME ZONE '2022-11-20T03:00:00Z', 'google.com/img', 1, 1)
 
 INSERT INTO tb_contracter_ad(contracter_id, advertising_id, date, status) VALUES (2, 1, TIMESTAMP WITH TIME ZONE '2020-12-30T03:00:00Z', 2)
 
-INSERT INTO tb_review(text, created_at, updated_at, star_rate, id_advertising) VALUES ('Muito bom até o momento', TIMESTAMP WITH TIME ZONE '2020-12-30T03:00:00Z', null, 4, 1)
+INSERT INTO tb_review(text, created_at, updated_at, star_rate, id_advertising) VALUES ('Muito bom até o momento', TIMESTAMP WITH TIME ZONE '2020-12-30T03:00:00Z', TIMESTAMP WITH TIME ZONE '2020-12-30T03:00:00Z', 4, 1)

@@ -1,5 +1,6 @@
 package com.example.SkillHub.entities;
 
+import com.example.SkillHub.dto.job.JobResponseDTO;
 import jakarta.persistence.*;
 import lombok.*;
 

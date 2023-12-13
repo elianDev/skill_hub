@@ -1,7 +1,9 @@
 package com.example.SkillHub.dto.advertising;
 
+import com.example.SkillHub.dto.job.JobAdvertisingResponseDTO;
 import com.example.SkillHub.dto.job.JobResponseDTO;
 import com.example.SkillHub.dto.review.ReviewResponseDTO;
+import com.example.SkillHub.dto.user.SellerResponseDTO;
 import com.example.SkillHub.dto.user.UserResponseDTO;
 import com.example.SkillHub.entities.Advertising;
 import com.example.SkillHub.entities.Review;
@@ -18,8 +20,8 @@ public record AdvertisingResponseDTO(Long id,
                                      Instant updatedAt,
                                      String imgUrl,
                                      List<ReviewResponseDTO> reviews,
-                                     JobResponseDTO job,
-                                     UserResponseDTO seller
+                                     JobAdvertisingResponseDTO job,
+                                     SellerResponseDTO seller
                                      ) {
 
     public AdvertisingResponseDTO(Advertising advertising) {
@@ -32,8 +34,8 @@ public record AdvertisingResponseDTO(Long id,
                 advertising.getUpdatedAt(),
                 advertising.getImgUrl(),
                 new ArrayList<>(),
-                new JobResponseDTO(advertising.getJob()),
-                new UserResponseDTO(advertising.getSeller())
+                new JobAdvertisingResponseDTO(advertising.getJob()),
+                new SellerResponseDTO(advertising.getSeller())
         );
     }
 
