@@ -8,7 +8,6 @@ import java.time.Instant;
 public record ReviewResponseDTO(Long id,
                                 String text,
                                 Instant createdAt,
-                                Instant updatedAt,
                                 StarRate starRate) {
 
     public ReviewResponseDTO(Review review) {
@@ -16,7 +15,6 @@ public record ReviewResponseDTO(Long id,
                 review.getId(),
                 review.getText(),
                 review.getCreatedAt(),
-                review.getUpdatedAt(),
                 review.getStarRate()
         );
     }

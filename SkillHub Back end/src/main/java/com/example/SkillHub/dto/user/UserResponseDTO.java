@@ -1,6 +1,7 @@
 package com.example.SkillHub.dto.user;
 
 import com.example.SkillHub.dto.advertising.AdvertisingResponseDTO;
+import com.example.SkillHub.dto.advertising.AdvertisingUserResponseDTO;
 import com.example.SkillHub.entities.Advertising;
 import com.example.SkillHub.entities.User;
 
@@ -15,7 +16,7 @@ public record UserResponseDTO(Long id,
                               LocalDate birthDate,
                               String phone,
                               Instant createdAt,
-                              List<AdvertisingResponseDTO> advertisings) {
+                              List<AdvertisingUserResponseDTO> advertisings) {
 
     public UserResponseDTO(User user) {
         this(
@@ -31,6 +32,6 @@ public record UserResponseDTO(Long id,
 
     public UserResponseDTO(User user, List<Advertising> advertisings) {
         this(user);
-        advertisings.forEach(ad -> this.advertisings.add(new AdvertisingResponseDTO(ad)));
+        advertisings.forEach(ad -> this.advertisings.add(new AdvertisingUserResponseDTO(ad)));
     }
 }
