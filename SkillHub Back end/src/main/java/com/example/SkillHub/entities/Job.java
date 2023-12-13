@@ -30,5 +30,5 @@ public class Job {
             joinColumns = @JoinColumn(name = "job_id"),
             inverseJoinColumns = @JoinColumn(name = "category_id")
     )
-    Set<Job> categories = new HashSet<>();
+    Set<Category> categories = new HashSet<>();
 }

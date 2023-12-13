@@ -1,6 +1,6 @@
 package com.example.SkillHub.controllers.handlers;
 
-import com.devsuperior.dscommerce.dto.CustomError;
+import com.example.SkillHub.dto.errors.CustomError;
 import com.example.SkillHub.services.exceptions.DatabaseException;
 import com.example.SkillHub.services.exceptions.ResourceNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
