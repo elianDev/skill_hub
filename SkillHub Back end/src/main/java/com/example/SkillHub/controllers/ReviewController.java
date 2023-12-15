@@ -3,6 +3,7 @@ package com.example.SkillHub.controllers;
 import com.example.SkillHub.dto.review.ReviewRequestDTO;
 import com.example.SkillHub.dto.review.ReviewResponseDTO;
 import com.example.SkillHub.services.ReviewService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -32,7 +33,7 @@ public class ReviewController {
     }
 
     @PostMapping
-    public ResponseEntity<ReviewResponseDTO> insert(@RequestBody ReviewRequestDTO dto) {
+    public ResponseEntity<ReviewResponseDTO> insert(@Valid @RequestBody ReviewRequestDTO dto) {
         ReviewResponseDTO response = service.insert(dto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("{id}")
                 .buildAndExpand(response.id()).toUri();
@@ -40,7 +41,7 @@ public class ReviewController {
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<ReviewResponseDTO> update(@PathVariable Long id, @RequestBody ReviewRequestDTO dto) {
+    public ResponseEntity<ReviewResponseDTO> update(@PathVariable Long id, @Valid @RequestBody ReviewRequestDTO dto) {
         ReviewResponseDTO response = service.update(id, dto);
         return ResponseEntity.ok().body(response);
     }

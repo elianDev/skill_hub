@@ -3,6 +3,7 @@ package com.example.SkillHub.controllers;
 import com.example.SkillHub.dto.advertising.AdvertisingRequestDTO;
 import com.example.SkillHub.dto.advertising.AdvertisingResponseDTO;
 import com.example.SkillHub.services.AdvertisingService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -32,7 +33,7 @@ public class AdvertisingController {
     }
 
     @PostMapping
-    public ResponseEntity<AdvertisingResponseDTO> insert(@RequestBody AdvertisingRequestDTO dto) {
+    public ResponseEntity<AdvertisingResponseDTO> insert(@Valid @RequestBody AdvertisingRequestDTO dto) {
         AdvertisingResponseDTO response = service.insert(dto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("{id}")
                 .buildAndExpand(response.id()).toUri();
@@ -40,7 +41,7 @@ public class AdvertisingController {
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<AdvertisingResponseDTO> update(@PathVariable Long id, @RequestBody AdvertisingRequestDTO dto) {
+    public ResponseEntity<AdvertisingResponseDTO> update(@PathVariable Long id, @Valid @RequestBody AdvertisingRequestDTO dto) {
         AdvertisingResponseDTO response = service.update(id, dto);
         return ResponseEntity.ok().body(response);
     }

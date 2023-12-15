@@ -3,6 +3,7 @@ package com.example.SkillHub.controllers;
 import com.example.SkillHub.dto.user.UserRequestDTO;
 import com.example.SkillHub.dto.user.UserResponseDTO;
 import com.example.SkillHub.services.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -32,7 +33,7 @@ public class UserController {
     }
 
     @PostMapping
-    public ResponseEntity<UserResponseDTO> insert(@RequestBody UserRequestDTO dto) {
+    public ResponseEntity<UserResponseDTO> insert(@Valid @RequestBody UserRequestDTO dto) {
         UserResponseDTO response = service.insert(dto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("{id}")
                 .buildAndExpand(response.id()).toUri();
@@ -40,7 +41,7 @@ public class UserController {
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<UserResponseDTO> update(@PathVariable Long id, @RequestBody UserRequestDTO dto) {
+    public ResponseEntity<UserResponseDTO> update(@PathVariable Long id, @Valid @RequestBody UserRequestDTO dto) {
         UserResponseDTO response = service.update(id, dto);
         return ResponseEntity.ok().body(response);
     }
